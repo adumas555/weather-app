@@ -1,0 +1,147 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #808080;
+  margin-top: 40px;
+}
+#enter-city {
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 14px 36px;
+  width: 200px;
+  height: 15px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+#current-city-button {
+  display: block;
+  margin: 0 auto;
+  background: #c9c0bb;
+  border: 1px solid #848482;
+  border-radius: 10px;
+}
+
+.international {
+  word-spacing: 20px;
+  border: 1px solid grey;
+  border-radius: 1px;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 7px;
+}
+
+.hub1 {
+  word-spacing: 5px;
+}
+
+.hub1:hover {
+  color: #1c39bb;
+}
+
+.hub2:hover {
+  color: #1c39bb;
+}
+
+.hub3:hover {
+  color: #1c39bb;
+}
+
+.hub4:hover {
+  color: #1c39bb;
+}
+
+#city {
+  font-size: 45px;
+  padding: 45px 45px 0 45px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.day-time {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.big-emoji {
+  text-align: center;
+}
+.fa-sun {
+  font-size: 100px;
+  margin: 30px;
+  color: #f2c22c;
+}
+.condition {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.weather-now {
+  text-align: center;
+}
+
+.current-temp,
+.far,
+.cel {
+  font-size: 36px;
+}
+
+.hi-lo {
+  font-size: 20px;
+}
+
+hr {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.info {
+  margin-left: 250px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.far:hover {
+  color: #1c39bb;
+}
+
+.cel:hover {
+  color: #1c39bb;
+}
+
+.row {
+  text-align: center;
+}
+.days {
+  font-weight: bold;
+  margin-top: 30px;
+}
+.fa-cloud-sun-rain,
+.fa-cloud-sun,
+.fa-cloud,
+.fa-cloud-rain,
+.fa-cloud-showers-heavy {
+  font-size: 30px;
+  color: #8c817b;
+}
+.fa-cloud-sun {
+  padding-left: 15px;
+}
+.fa-cloud {
+  padding-left: 20px;
+}
+.fa-cloud-rain {
+  padding-left: 30px;
+}
+.fa-cloud-showers-heavy {
+  padding-left: 40px;
+}
