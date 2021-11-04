@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,500;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5367e2550c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" style="width: 45rem">
+        <div class="card-body">
+          <form id="search-form">
+            <input
+              type="text"
+              placeholder="Enter a city"
+              id="enter-city"
+              autocomplete="off"
+              autofocus="on"
+            />
+          </form>
+          <button id="current-city-button">📍</button>
+          <p class="international">
+            <span class="hub1"> Los Angeles </span>
+            <span class="hub2"> London </span><span class="hub3"> Seoul </span
+            ><span class="hub4"> Sydney </span>
+          </p>
+          <h1 class="city" id="city">New York City</h1>
+          <div class="day-time" id="day-time">SUNDAY 20:01</div>
+          <p class="big-emoji"><i class="fas fa-sun"></i></p>
+          <div class="condition">SUNNY</div>
+          <div class="weather-now">
+            <span class="current-temp">72 </span>
+            <span class="far" id="fahrenheit-link">°F </span> |
+            <span class="cel" id="celcius-link"> °C</span>
+            <div class="hi-lo">
+              H: <span class="high">76°</span>
+              <span>L: <span class="low">69°</span></span>
+            </div>
+          </div>
+          <hr />
+          <p class="info">
+            Humidity:<span class="humidity"></span> <br />
+            Wind: <span class="wind-speed"></span><br />
+            Feels like:<span class="feels-like"></span>
+          </p>
+          <hr />
+          <div class="row days">
+            <div class="col" style="width: 12.499999995%">MON</div>
+            <div class="col" style="width: 12.499999995%">TUE</div>
+            <div class="col" style="width: 12.499999995%">WED</div>
+            <div class="col" style="width: 12.499999995%">THU</div>
+            <div class="col" style="width: 12.499999995%">FRI</div>
+            <div class="row">
+              <div class="col" style="width: 12.499999995%" class="emoji-1">
+                <i class="fas fa-cloud-sun-rain"></i>
+              </div>
+              <div class="col" style="width: 12.499999995%" class="emoji-2">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <div class="col" style="width: 12.499999995%" class="emoji-3">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <div class="col" style="width: 12.499999995%" class="emoji-4">
+                <i class="fas fa-cloud-rain"></i>
+              </div>
+              <div class="col" style="width: 12.499999995%" class="emoji-5">
+                <i class="fas fa-cloud-showers-heavy"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" style="width: 12.499999995%" class="temp-1">
+              66°
+            </div>
+            <div class="col" style="width: 12.499999995%" class="temp-2">
+              60°
+            </div>
+            <div class="col" style="width: 12.499999995%" class="temp-3">
+              62°
+            </div>
+            <div class="col" style="width: 12.499999995%" class="temp-4">
+              58°
+            </div>
+            <div class="col" style="width: 12.499999995%" class="temp-5">
+              63°
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
