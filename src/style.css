@@ -9,7 +9,8 @@ body {
   margin: 0 auto;
   border: 2px solid #808080;
   margin-top: 40px;
-  opacity: 0.8;
+  opacity: 0.85;
+  background-color: #a5b0c0;
 }
 #enter-city {
   border-radius: 25px;
@@ -21,6 +22,7 @@ body {
   display: block;
   margin: 0 auto;
   margin-top: 25px;
+  background-color: #e7e7e7;
 }
 #current-city-button {
   display: block;
@@ -154,4 +156,5 @@ hr {
 .about-me {
   text-align: center;
   font-size: 15px;
+  color: #e7e7e7;
 }

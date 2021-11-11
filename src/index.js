@@ -50,6 +50,10 @@ function weatherInfo(response) {
   high.innerHTML = `${Math.round(response.data.main.temp_max)}°`;
   let low = document.querySelector(".low");
   low.innerHTML = `${Math.round(response.data.main.temp_min)}°`;
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute =
+    ("src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function updateCityTemp(response) {
