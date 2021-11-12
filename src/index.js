@@ -61,6 +61,42 @@ toFahrenheit.addEventListener("click", cToF);
 
 let form = document.querySelector("#search-form");
 
+let losAngelesLink = document.querySelector(".hub1");
+
+function losAngelesUpdate(event) {
+  event.preventDefault();
+  citySearch("Los Angeles");
+}
+
+losAngelesLink.addEventListener("click", losAngelesUpdate);
+
+let londonLink = document.querySelector(".hub2");
+
+function londonUpdate(event) {
+  event.preventDefault();
+  citySearch("London");
+}
+
+londonLink.addEventListener("click", londonUpdate);
+
+let seoulLink = document.querySelector(".hub3");
+
+function seoulUpdate(event) {
+  event.preventDefault();
+  citySearch("Seoul");
+}
+
+seoulLink.addEventListener("click", seoulUpdate);
+
+let sydneyLink = document.querySelector(".hub4");
+
+function sydneyUpdate(event) {
+  event.preventDefault();
+  citySearch("Sydney");
+}
+
+sydneyLink.addEventListener("click", sydneyUpdate);
+
 function weatherInfo(response) {
   highTemperature = response.data.main.temp_max;
   lowTemperature = response.data.main.temp_min;
