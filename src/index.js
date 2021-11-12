@@ -28,11 +28,11 @@ function fToC(celcius) {
   let celciusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
   temperature.innerHTML = Math.round(celciusTemperature);
   let cHigh = ((highTemperature - 32) * 5) / 9;
-  high.innerHTML = Math.round(cHigh);
+  high.innerHTML = `${Math.round(cHigh)}°`;
   let cLow = ((lowTemperature - 32) * 5) / 9;
-  low.innerHTML = Math.round(cLow);
+  low.innerHTML = `${Math.round(cLow)}°`;
   let cFeels = ((feelTemperature - 32) * 5) / 9;
-  feels.innerHTML = Math.round(cFeels);
+  feels.innerHTML = `${Math.round(cFeels)}°`;
 }
 
 function cToF(fahrenheit) {
@@ -43,9 +43,9 @@ function cToF(fahrenheit) {
   toCelcius.classList.remove("active");
   toFahrenheit.classList.add("active");
   temperature.innerHTML = Math.round(fahrenheitTemperature);
-  high.innerHTML = Math.round(highTemperature);
-  low.innerHTML = Math.round(lowTemperature);
-  feels.innerHTML = Math.round(feelTemperature);
+  high.innerHTML = `${Math.round(highTemperature)}°`;
+  low.innerHTML = `${Math.round(lowTemperature)}°`;
+  feels.innerHTML = `${Math.round(feelTemperature)}°`;
 }
 
 let fahrenheitTemperature = null;
@@ -72,7 +72,7 @@ function weatherInfo(response) {
   let wind = document.querySelector(`.wind-speed`);
   wind.innerHTML = `${response.data.wind.speed} mph`;
   let feels = document.querySelector(".feels-like");
-  feels.innerHTML = `${Math.round(feelTemperature)}°F`;
+  feels.innerHTML = `${Math.round(feelTemperature)}°`;
   let high = document.querySelector(".high");
   high.innerHTML = `${Math.round(highTemperature)}°`;
   let low = document.querySelector(".low");
