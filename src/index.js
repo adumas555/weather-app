@@ -113,7 +113,7 @@ function weatherInfo(response) {
   high.innerHTML = `${Math.round(highTemperature)}°`;
   let low = document.querySelector(".low");
   low.innerHTML = `${Math.round(lowTemperature)}°`;
-  let iconElement = document.querySelector("#weather-icon");
+  let iconElement = document.querySelector("#day-weather-icon");
   iconElement.setAttribute =
     ("src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
