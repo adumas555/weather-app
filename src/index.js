@@ -114,9 +114,10 @@ function weatherInfo(response) {
   let low = document.querySelector(".low");
   low.innerHTML = `${Math.round(lowTemperature)}°`;
   let iconElement = document.querySelector("#day-weather-icon");
-  iconElement.setAttribute =
-    ("src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function updateCityTemp(response) {
