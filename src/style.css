@@ -80,11 +80,7 @@ body {
 .big-emoji {
   text-align: center;
 }
-.fa-sun {
-  font-size: 100px;
-  margin: 30px;
-  color: #f2c22c;
-}
+
 .condition {
   text-align: center;
   text-transform: uppercase;
@@ -102,6 +98,15 @@ body {
 #fahrenheit-link {
   font-family: "Raleway", sans-serif;
 }
+.weather-now .active {
+  color: #065077;
+  cursor: default;
+}
+
+.weather-now .active:hover {
+  text-decoration: none;
+}
+
 .hi-lo {
   font-size: 20px;
 }
@@ -120,11 +125,11 @@ hr {
 }
 
 .far:hover {
-  color: #1c39bb;
+  color: #065077;
 }
 
 .cel:hover {
-  color: #1c39bb;
+  color: #065077;
 }
 
 .row {

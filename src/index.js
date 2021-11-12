@@ -20,13 +20,38 @@ dayTime.innerHTML = `${day}   ${hours}:${minutes}`;
 
 function fToC(celcius) {
   let temperature = document.querySelector(".current-temp");
-  temperature.innerHTML = "17 ";
+  let high = document.querySelector(".high");
+  let low = document.querySelector(".low");
+  let feels = document.querySelector(".feels-like");
+  toFahrenheit.classList.remove("active");
+  toCelcius.classList.add("active");
+  let celciusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  temperature.innerHTML = Math.round(celciusTemperature);
+  let cHigh = ((highTemperature - 32) * 5) / 9;
+  high.innerHTML = Math.round(cHigh);
+  let cLow = ((lowTemperature - 32) * 5) / 9;
+  low.innerHTML = Math.round(cLow);
+  let cFeels = ((feelTemperature - 32) * 5) / 9;
+  feels.innerHTML = Math.round(cFeels);
 }
 
 function cToF(fahrenheit) {
   let temperature = document.querySelector(".current-temp");
-  temperature.innerHTML = "72 ";
+  let high = document.querySelector(".high");
+  let low = document.querySelector(".low");
+  let feels = document.querySelector(".feels-like");
+  toCelcius.classList.remove("active");
+  toFahrenheit.classList.add("active");
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+  high.innerHTML = Math.round(highTemperature);
+  low.innerHTML = Math.round(lowTemperature);
+  feels.innerHTML = Math.round(feelTemperature);
 }
+
+let fahrenheitTemperature = null;
+let highTemperature = null;
+let lowTemperature = null;
+let feelTemperature = null;
 
 let toCelcius = document.querySelector("#celcius-link");
 toCelcius.addEventListener("click", fToC);
@@ -37,7 +62,9 @@ toFahrenheit.addEventListener("click", cToF);
 let form = document.querySelector("#search-form");
 
 function weatherInfo(response) {
-  console.log(response.data);
+  highTemperature = response.data.main.temp_max;
+  lowTemperature = response.data.main.temp_min;
+  feelTemperature = response.data.main.feels_like;
   let description = document.querySelector(`.condition`);
   description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector(`.humidity`);
@@ -45,11 +72,11 @@ function weatherInfo(response) {
   let wind = document.querySelector(`.wind-speed`);
   wind.innerHTML = `${response.data.wind.speed} mph`;
   let feels = document.querySelector(".feels-like");
-  feels.innerHTML = `${Math.round(response.data.main.feels_like)}°F`;
+  feels.innerHTML = `${Math.round(feelTemperature)}°F`;
   let high = document.querySelector(".high");
-  high.innerHTML = `${Math.round(response.data.main.temp_max)}°`;
+  high.innerHTML = `${Math.round(highTemperature)}°`;
   let low = document.querySelector(".low");
-  low.innerHTML = `${Math.round(response.data.main.temp_min)}°`;
+  low.innerHTML = `${Math.round(lowTemperature)}°`;
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute =
     ("src",
@@ -57,8 +84,9 @@ function weatherInfo(response) {
 }
 
 function updateCityTemp(response) {
+  fahrenheitTemperature = response.data.main.temp;
   let cityName = response.data.name;
-  let cityTemp = Math.round(response.data.main.temp);
+  let cityTemp = Math.round(fahrenheitTemperature);
 
   let enterCity = document.querySelector("#city");
   enterCity.innerHTML = cityName;
