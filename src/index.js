@@ -97,10 +97,38 @@ function sydneyUpdate(event) {
 
 sydneyLink.addEventListener("click", sydneyUpdate);
 
+function formatDate(timezone) {
+  let d = new Date();
+  let localTime = d.getTime();
+  let localOffset = d.getTimezoneOffset() * 60000;
+  let utc = localTime + localOffset;
+  let nDate = new Date(utc + 1000 * timezone);
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[nDate.getDay()];
+  let hours = nDate.getHours();
+  hours = hours > 9 ? hours : "0" + hours;
+  let minutes = nDate.getMinutes();
+  minutes = minutes > 9 ? minutes : "0" + minutes;
+
+  return `${day} ${hours}:${minutes}`;
+}
+
 function weatherInfo(response) {
   highTemperature = response.data.main.temp_max;
   lowTemperature = response.data.main.temp_min;
   feelTemperature = response.data.main.feels_like;
+  let dayTime = document.querySelector("#day-time");
+  dayTime.innerHTML = formatDate(response.data.timezone);
   let description = document.querySelector(`.condition`);
   description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector(`.humidity`);
