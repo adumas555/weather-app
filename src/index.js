@@ -136,9 +136,7 @@ function displayForecast() {
               <div class="col-4" class="emoji-1">
                 <i class="fas fa-cloud-sun-rain"></i>
               </div>
-              
             </div>
-          </div>
           <div class="row">
             <div class="col-4"  class="temp-1">
               <span class="max-temp-1">66°</span>
