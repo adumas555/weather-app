@@ -123,6 +123,33 @@ function formatDate(timezone) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["MON", "TUE", "WED", "THU", "FRI"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-4 days">${day}</div>
+            <div class="row">
+              <div class="col-4" class="emoji-1">
+                <i class="fas fa-cloud-sun-rain"></i>
+              </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4"  class="temp-1">
+              <span class="max-temp-1">66°</span>
+              <span class="min-temp-1">61°</span>
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function weatherInfo(response) {
   highTemperature = response.data.main.temp_max;
   lowTemperature = response.data.main.temp_min;
@@ -146,6 +173,7 @@ function weatherInfo(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  displayForecast();
 }
 
 function updateCityTemp(response) {
