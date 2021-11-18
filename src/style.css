@@ -30,6 +30,8 @@ body {
   background: #c9c0bb;
   border: 1px solid #848482;
   border-radius: 10px;
+  margin-top: 5px;
+  text-align: center;
 }
 
 .international {
@@ -151,30 +153,11 @@ hr {
 .row {
   text-align: center;
 }
-.days {
+.forecast-day {
   font-weight: bold;
   margin-top: 30px;
 }
-.fa-cloud-sun-rain,
-.fa-cloud-sun,
-.fa-cloud,
-.fa-cloud-rain,
-.fa-cloud-showers-heavy {
-  font-size: 30px;
-  color: #8c817b;
-}
-.fa-cloud-sun {
-  padding-left: 15px;
-}
-.fa-cloud {
-  padding-left: 20px;
-}
-.fa-cloud-rain {
-  padding-left: 30px;
-}
-.fa-cloud-showers-heavy {
-  padding-left: 40px;
-}
+
 .about-me {
   text-align: center;
   font-size: 15px;

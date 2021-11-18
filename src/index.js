@@ -125,24 +125,24 @@ function formatDate(timezone) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row row-col-5">`;
   let days = ["MON", "TUE", "WED", "THU", "FRI"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
-            <div class="col-4 days">${day}</div>
-            <div class="row">
-              <div class="col-4" class="emoji-1">
-                <i class="fas fa-cloud-sun-rain"></i>
-              </div>
-            </div>
-          <div class="row">
-            <div class="col-4"  class="temp-1">
+            <div class="col" >
+              <div class="forecast-day">${day}</div>
+              <img src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt=""
+              id="forecast-icon"
+              width="60"
+              />
+              <div class="col"  class="forecast-temperatures">
               <span class="max-temp-1">66°</span>
               <span class="min-temp-1">61°</span>
-            </div>
-          </div>`;
+              </div>
+            </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
