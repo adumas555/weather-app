@@ -18,73 +18,6 @@ minutes = minutes > 9 ? minutes : "0" + minutes;
 
 dayTime.innerHTML = `${day}   ${hours}:${minutes}`;
 
-function fToC(celcius) {
-  let temperature = document.querySelector(".current-temp");
-  let high = document.querySelector(".high");
-  let low = document.querySelector(".low");
-  let feels = document.querySelector(".feels-like");
-
-  toFahrenheit.classList.remove("active");
-  toCelcius.classList.add("active");
-  let celciusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  temperature.innerHTML = Math.round(celciusTemperature);
-  let cHigh = ((highTemperature - 32) * 5) / 9;
-  high.innerHTML = `${Math.round(cHigh)}°`;
-  let cLow = ((lowTemperature - 32) * 5) / 9;
-  low.innerHTML = `${Math.round(cLow)}°`;
-  let cFeels = ((feelTemperature - 32) * 5) / 9;
-  feels.innerHTML = `${Math.round(cFeels)}°`;
-
-  [1, 2, 3, 4, 5].forEach(function (index) {
-    let forecastMax = document.querySelector(".forecast-max");
-    let forecastMin = document.querySelector(".forecast-min");
-    let cforemax = ((fahrenheitForecast[index].max - 32) * 5) / 9;
-    let cforemin = ((fahrenheitForecast[index].min - 32) * 5) / 9;
-    forecastMax.innerHTML = `${Math.round(cforemax)}°`;
-    forecastMin.innerHTML = `${Math.round(cforemin)}°`;
-  });
-}
-
-function cToF(fahrenheit) {
-  let temperature = document.querySelector(".current-temp");
-  let high = document.querySelector(".high");
-  let low = document.querySelector(".low");
-  let feels = document.querySelector(".feels-like");
-
-  toCelcius.classList.remove("active");
-  toFahrenheit.classList.add("active");
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
-  high.innerHTML = `${Math.round(highTemperature)}°`;
-  low.innerHTML = `${Math.round(lowTemperature)}°`;
-  feels.innerHTML = `${Math.round(feelTemperature)}°`;
-
-  [1, 2, 3, 4, 5, 6].forEach(function (index) {
-    let forecastMax = document.querySelector(".forecast-max");
-    let forecastMin = document.querySelector(".forecast-min");
-    forecastMax.innerHTML = `${Math.round(fahrenheitForecast[index].max)}°`;
-    forecastMin.innerHTML = `${Math.round(fahrenheitForecast[index].min)}°`;
-  });
-}
-
-let fahrenheitTemperature = null;
-let highTemperature = null;
-let lowTemperature = null;
-let feelTemperature = null;
-let fahrenheitForecast = [
-  { max: 0, min: 0 },
-  { max: 0, min: 0 },
-  { max: 0, min: 0 },
-  { max: 0, min: 0 },
-  { max: 0, min: 0 },
-  { max: 0, min: 0 },
-];
-
-let toCelcius = document.querySelector("#celcius-link");
-toCelcius.addEventListener("click", fToC);
-
-let toFahrenheit = document.querySelector("#fahrenheit-link");
-toFahrenheit.addEventListener("click", cToF);
-
 let form = document.querySelector("#search-form");
 
 let losAngelesLink = document.querySelector(".hub1");
@@ -156,10 +89,6 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row row-col-5">`;
   forecast.forEach(function (forecastDay, index) {
     if (index > 0 && index < 6) {
-      fahrenheitForecast[index] = {
-        max: forecastDay.temp.max,
-        min: forecastDay.temp.min,
-      };
       forecastHTML =
         forecastHTML +
         `

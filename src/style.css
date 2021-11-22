@@ -97,16 +97,8 @@ body {
 .cel {
   font-size: 36px;
 }
-#fahrenheit-link {
+#fahrenheit {
   font-family: "Raleway", sans-serif;
-}
-.weather-now .active {
-  color: #065077;
-  cursor: default;
-}
-
-.weather-now .active:hover {
-  text-decoration: none;
 }
 
 .hi-lo {
